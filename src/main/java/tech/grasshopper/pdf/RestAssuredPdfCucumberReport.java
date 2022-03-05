@@ -17,16 +17,19 @@ public class RestAssuredPdfCucumberReport extends PDFCucumberReport {
 
 		// No zoomed media display required
 		reportConfig.setDisplayExpanded(false);
+		// Only attached files allowed
+		reportConfig.setDisplayAttached(true);
 	}
 
+	@Override
 	protected void createDetailedSection() {
 		if (reportConfig.isDisplayDetailed())
 			RestAssuredDetailedSection.builder().displayData(reportData.getFeatureData()).reportConfig(reportConfig)
 					.document(document).fileAnnotations(fileAnnotations).build().createSection();
 	}
 
-	protected void processAnnotations() {
-		super.processAnnotations();
+	@Override
+	protected void processFileAnnotations() {
 		FileAnnotationProcessor.builder().document(document).reportFile(reportFile).annotations(fileAnnotations).build()
 				.processAnnotations();
 	}

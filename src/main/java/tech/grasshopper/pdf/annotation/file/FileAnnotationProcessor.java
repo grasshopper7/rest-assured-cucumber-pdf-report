@@ -50,6 +50,8 @@ public class FileAnnotationProcessor {
 				fs.setEmbeddedFile(ef);
 				fs.setFile(f.getLink());
 
+				fs.setFileUnicode(f.getLink());
+
 				fileAtt.setFile(fs);
 
 				f.getPage().getAnnotations().add(fileAtt);
