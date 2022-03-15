@@ -18,12 +18,12 @@ public class RestAssuredDetailedSection extends DetailedSection {
 	@SuppressWarnings("unchecked")
 	@Override
 	protected void scenarioAdditionalInfoDisplay(Scenario scenario) {
-		RestAssuredDisplay featureDisplay = RestAssuredDisplay.builder().ylocation(ylocation).document(document)
+		RestAssuredDisplay restAssuredDisplay = RestAssuredDisplay.builder().ylocation(ylocation).document(document)
 				.reportConfig(reportConfig).fileAnnotations(fileAnnotations).data((List<Map<String, String>>) scenario
 						.getAdditionalData().get(AdditionalDataKey.REST_ASSURED_DATA_KEY))
 				.build();
-		featureDisplay.display();
+		restAssuredDisplay.display();
 
-		ylocation = featureDisplay.getFinalY() - GAP;
+		ylocation = restAssuredDisplay.getFinalY() - GAP;
 	}
 }

@@ -41,6 +41,8 @@ public class RestAssuredDisplay extends Display {
 
 	@Override
 	public void display() {
+		finalY = ylocation;
+
 		data.forEach(d -> {
 
 			TableBuilder tableBuilder = Table.builder().addColumnsOfWidth(80f, 50f, 250f, 80f, 300f).borderWidth(1f)
@@ -61,7 +63,7 @@ public class RestAssuredDisplay extends Display {
 							.add(createDataFileDisplay("Response", d, 1)).build());
 
 			TableCreator tableCreator = TableCreator.builder().tableBuilder(tableBuilder).document(document)
-					.startX(CONTENT_START_X).startY(ylocation).endY(DETAILED_CONTENT_END_Y).repeatRows(2)
+					.startX(CONTENT_START_X).startY(ylocation).endY(DETAILED_CONTENT_END_Y).repeatRows(0).splitRow(true)
 					.pageSupplier(PageCreator.builder().document(document).build()
 							.landscapePageWithHeaderAndNumberSupplier(DetailedSection.SECTION_TITLE))
 					.build();
