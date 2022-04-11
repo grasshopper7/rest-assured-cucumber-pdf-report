@@ -76,7 +76,7 @@ public class RestAssuredDisplay extends Display {
 	}
 
 	private AbstractCell createDataFileDisplay(String reqres, Map<String, String> data, int colSpan) {
-		String[] types = { "Body", "Headers", "Cookies" };
+		String[] types = { "Body", "Headers & Cookies", "Parameters" };
 
 		List<FileAnnotation> annotations = new ArrayList<>();
 		StringBuffer textSbr = new StringBuffer();
@@ -92,7 +92,7 @@ public class RestAssuredDisplay extends Display {
 			return TextCell.builder().text("").colSpan(colSpan).build();
 		else {
 			fileAnnotations.addFileAnnotations(annotations);
-			return TextFileLinkCell.builder().text(textSbr.toString()).annotations(annotations).colSpan(colSpan)
+			return TextFileLinkCell.builder().text(textSbr.toString()).fontSize(11).annotations(annotations).colSpan(colSpan)
 					.build();
 		}
 	}
