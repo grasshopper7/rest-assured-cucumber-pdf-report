@@ -43,6 +43,9 @@ public class RestAssuredDisplay extends Display {
 	public void display() {
 		finalY = ylocation;
 
+		if (data == null || data.isEmpty())
+			return;
+
 		data.forEach(d -> {
 
 			TableBuilder tableBuilder = Table.builder().addColumnsOfWidth(80f, 50f, 250f, 80f, 300f).borderWidth(1f)
@@ -76,7 +79,7 @@ public class RestAssuredDisplay extends Display {
 	}
 
 	private AbstractCell createDataFileDisplay(String reqres, Map<String, String> data, int colSpan) {
-		String[] types = { "Body", "Headers", "Cookies" };
+		String[] types = { "Body", "Headers & Cookies", "Parameters" };
 
 		List<FileAnnotation> annotations = new ArrayList<>();
 		StringBuffer textSbr = new StringBuffer();
@@ -92,8 +95,8 @@ public class RestAssuredDisplay extends Display {
 			return TextCell.builder().text("").colSpan(colSpan).build();
 		else {
 			fileAnnotations.addFileAnnotations(annotations);
-			return TextFileLinkCell.builder().text(textSbr.toString()).annotations(annotations).colSpan(colSpan)
-					.build();
+			return TextFileLinkCell.builder().text(textSbr.toString()).fontSize(11).annotations(annotations)
+					.colSpan(colSpan).build();
 		}
 	}
 }
