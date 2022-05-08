@@ -15,8 +15,6 @@ public class RestAssuredPdfCucumberReport extends PDFCucumberReport {
 		super(reportData, reportFile);
 		this.fileAnnotations = new FileAnnotationStore();
 
-		// No zoomed media display required
-		reportConfig.setDisplayExpanded(false);
 		// Only attached files allowed
 		reportConfig.setDisplayAttached(true);
 	}
