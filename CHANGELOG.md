@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.4.1 (2022-5-11)
+
+* Updated pdf report to 2.8.1
+
+## 1.4.0 (2022-5-2)
+
+* Updated pdf report to 2.8.0
+
 ## 1.3.1 (2022-4-26)
 
 * Updated pdf report to 2.7.0
