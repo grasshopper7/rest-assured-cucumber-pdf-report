@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.5.0 (2023-8-10)
+* Updated pdf report to 2.14.0
+* Updated extent report version
+* Updated java version to 1
+
 ## 1.4.1 (2022-5-11)
 
 * Updated pdf report to 2.8.1
